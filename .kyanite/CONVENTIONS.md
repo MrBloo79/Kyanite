@@ -10,6 +10,34 @@ Standards and conventions for this workspace.
 - Join clauses with semicolons, colons, or parentheses instead of dashes
 - No placeholder sections for future content
 
+## Frontmatter
+
+Every note starts with YAML frontmatter:
+
+- `status`: new, active, shelved, next, waiting, done
+- `created`: YYYY-MM-DD
+- `modified`: YYYY-MM-DD
+- `topics`: array of free-form tags for searchability
+
+Frontmatter keeps notes findable and trackable across the vault.
+
+### Status
+
+- `new`: just captured, not reviewed
+- `active`: in use, maintained
+- `shelved`: abandoned, may revisit
+- `next`: prioritized as next action
+- `waiting`: blocked on external input
+- `done`: completed, archived
+
+## Actions
+
+Actions use the TaskNotes plugin, which adds:
+
+- `priority`: low, normal, high, top
+- `scheduled`: YYYY-MM-DD, optional
+- `projects`: array of wikilinks to related projects
+
 ## References
 
 - Use wikilinks syntax: `[[FILENAME]]`
