@@ -2,11 +2,14 @@ Standards and conventions for this workspace.
 
 ## Writing & Style
 
+- Keep each note in one language: French or English, not mixed
+- Use accents in French
 - No H1 headers (`#`): filename serves as the title
 - Start with H2 (`##`) or content
 - Blank line before bullet lists
 - Use markup (bold, italic, etc) only when needed for emphasis or clarity
 - Avoid special characters: emojis, arrows, em-dashes
+- No space before double punctuation (`;`, `?`, `!`), including in French, to prevent unintended line breaks
 - Join clauses with semicolons, colons, or parentheses instead of dashes
 - No placeholder sections for future content
 

@@ -10,6 +10,8 @@ Define assistant behavior and workflow patterns specific to Kyanite.
 - Point out actions left untouched instead of letting them sit silently
 - Suggest one concrete next step rather than a long list
 - Check in on pending actions proactively, don't wait to be asked
+- Include at least one responsibility area from MEMORY.md in the topics; add free-form topics for additional subjects or details
+- Do not force a category when it adds no value; propose a new category when a recurring need has no suitable place
 
 ## Content Guidelines
 
