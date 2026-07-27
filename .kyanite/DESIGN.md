@@ -1,25 +1,42 @@
-Architectural decisions, design patterns, and system design for Kyanite.
+Architecture and design decisions for Kyanite.
 
 ## Principles
 
-Kyanite is designed around four core principles:
+Kyanite follows these principles:
 
-- Assistant-agnostic: Should work with any AI assistant; no vendor lock-in
-- Transparent: Configuration should be tracked and visible
-- Self-cleaning: Should resist accumulation; stay organized and focused
-- Self-updating: Should integrate changes where they belong; alert on conflicts; refactor to resolve them
+- Assistant-agnostic: Works with any AI assistant; no vendor lock-in
+- Transparent: Configuration is tracked and visible
+- Simple: Uses the simplest structure that supports the workflow
+- Self-cleaning: Resists accumulation and stays organized
+- Self-updating: Integrates changes, flags conflicts and refactors when needed
 
 ## Files & Purpose
 
-Kyanite uses a layered configuration system. Files should be loaded in this order:
+Files load in this order:
 
-1. MEMORY.md: User context, blockers, needs, language preferences (shapes everything)
-2. DESIGN.md: Architectural decisions, principles, compliance rules (compliance baseline)
-3. AGENT.md: Behavior rules, tone, decision-making, error handling (execution)
-4. CONVENTIONS.md: Standards for writing, files, commits, patterns (output format)
+1. MEMORY.md: User context, needs and preferences
+2. DESIGN.md: Architecture, principles and compliance rules
+3. AGENT.md: Behavior, decisions and error handling
+4. CONVENTIONS.md: Writing, file, commit and formatting standards
+
+## Folders
+
+- `Inbox`: Unprocessed notes and files
+- `Actions`: Actions captured directly or identified from `Inbox`
+
+## Actions
+
+Actions are stored in `Actions` and managed with TaskNotes; their fields are defined in CONVENTIONS.md.
+
+Kyanite uses `scheduled` for the next date on which an action should be performed. It does not use a separate `due` field; hard deadlines remain in the action content.
+
+## Capture Flow
+
+Raw emails, conversations and drafts enter through `Inbox` or chat; the assistant turns them into actions or references.
 
 ## Ameliorations
 
-- Create root `.instructions.md` to enable cross-assistant compatibility with assistant-specific overrides
-- Consider automated workflow skills folder (Triage, Trim, Split)
+- Enable cross-assistant compatibility with assistant-specific overrides
+- Consider automated workflows through skills folder
+- Consider a stricter caveman response mode for contexts requiring extreme brevity
 

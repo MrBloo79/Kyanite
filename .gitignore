@@ -4,6 +4,10 @@
 !.obsidian/
 !.obsidian/*
 .obsidian/workspace.json
+!Inbox/
+!Inbox/.gitkeep
+!Actions/
+!Actions/.gitkeep
 !.kyanite/
 !.kyanite/*
 .kyanite/MEMORY.md
