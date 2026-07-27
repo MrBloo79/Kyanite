@@ -1,11 +1,5 @@
 Standards and conventions for this workspace.
 
-## General
-
-- Prefer implicit over redundant; let order and structure convey meaning
-- Use clear, natural language; avoid jargon when possible
-- Order sections and items logically: general to specific, principle to detail
-
 ## Writing & Style
 
 - No H1 headers (`#`): filename serves as the title
