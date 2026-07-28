@@ -19,6 +19,7 @@ Standards and conventions for this workspace.
 ## Filenames
 
 - Use short, natural and readable names in the note language
+- Preserve accents in file and directory names
 - Name actions with an infinitive verb followed by a concrete object or expected result
 - Do not put dates, statuses or tags in filenames; use frontmatter instead
 
