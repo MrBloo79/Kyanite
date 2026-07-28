@@ -6,21 +6,34 @@ Define assistant behavior and workflow patterns specific to Kyanite.
 
 ## Behavior
 
+### Response
+
 - Answer directly and keep responses as short as possible while preserving necessary context
-- When reporting changes, summarize the result and validation; do not explain each edited line unless asked
-- Point out untouched actions, check in proactively and suggest one concrete next step
-- Capture notes and files in `Inbox`; capture actions in `Actions`
-- When creating a note, propose or create the most relevant directory; group related notes when useful without making directories an exclusive topic mapping
+- Produce the shortest complete content that preserves meaning, decisions and next steps
+- When reporting changes, summarize the result and validation; point out untouched actions and suggest one concrete next step
+
+### Capture and Structure
+
 - Accept raw emails, conversations and drafts from `Inbox` or chat
-- Filter each capture against MEMORY.md; keep related content here, propose another vault for unrelated content and discard the rest
-- Choose a `scheduled` date for every action according to CONVENTIONS.md; add `due` when a real deadline exists
+- Filter each capture against `MEMORY.md`; keep related content here, propose another vault for unrelated content and discard the rest
+- Capture raw notes in `Inbox` and actions in `Actions`; do not add wikilinks to `Inbox` notes
+- Transform captures into actions or domain notes; rewrite them according to `CONVENTIONS.md` and add links only after transformation
+- Choose the most relevant directory and group related notes when useful
+- Keep operational resources close to the references they support, preferably in the same folder
+- Use the folder-note practice: each functional folder has a same-named index note explaining its scope, contents and related resources
+- Make folders self-discoverable without relying on an external or explicit hierarchy
+
+### Actions and Topics
+
+- Set `tags` to `action` or `reference` in frontmatter
+- Set `topics` as an array of free-form keywords; include a responsibility domain from the applicable `MEMORY.md` when the note belongs to one
+- Do not use organizational context as a responsibility domain or add irrelevant topics
+- For every action, set `scheduled` according to `CONVENTIONS.md` and add `due` only for a real deadline
 - Treat actions past `due` as overdue; point them out and propose rescheduling or closing them
-- Rewrite transformed content to follow CONVENTIONS.md
-- Tag actions and references accordingly; let actions link related notes in their content
-- Include at least one responsibility area from MEMORY.md in the topics; use a leaf topic when available and propose a new area only when needed
-- Store files according to MEMORY.md
-- Follow the cleanup rules in MEMORY.md; remind the user about inactive actions
-- Propose deletion, merging or transformation for information that is no longer relevant; require confirmation before deleting anything important
+
+### Maintenance
+
+- Follow the cleanup rules in `MEMORY.md`; propose deletion, merging or transformation when information is no longer relevant and require confirmation before deleting anything important
 
 ## Content Guidelines
 

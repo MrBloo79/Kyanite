@@ -19,7 +19,6 @@ Standards and conventions for this workspace.
 ## Filenames
 
 - Use short, natural and readable names in the note language
-- Do not use accents in file or directory names
 - Name actions with an infinitive verb followed by a concrete object or expected result
 - Do not put dates, statuses or tags in filenames; use frontmatter instead
 
@@ -33,11 +32,13 @@ Frontmatter keeps notes findable and trackable across the vault. Every note star
 - `created`: YYYY-MM-DD
 - `modified`: YYYY-MM-DD
 - `description`: optional short summary
-- `tags`: `action` or `reference`
-- `topics`: array of free-form tags for searchability
+- `tags`: `action` or `reference`; this field identifies the note type
+- `topics`: array of free-form keywords for searchability, including a relevant responsibility domain when the note belongs to one
 - `recipient`: optional array of people benefiting from the note or action
 
 Keep shared frontmatter fields in this order: `status`, `created`, `modified`, `description`, `tags`, `topics`, `recipient`.
+
+Organizational context is not a responsibility domain.
 
 ### Status
 
