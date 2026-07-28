@@ -6,6 +6,7 @@ Standards and conventions for this workspace.
 - Use accents in French
 - Use spaces only; indent with two spaces and never tabs
 - Keep list items readable: concise but complete
+- Omit final periods from short list items; use them in paragraphs and multi-sentence items
 - No H1 headers (`#`); start with H2 (`##`) or content; filename serves as the title
 - Blank line before bullet lists
 - Use markup (bold, italic, etc) only when needed for emphasis or clarity
