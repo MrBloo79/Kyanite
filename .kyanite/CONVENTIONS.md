@@ -4,19 +4,21 @@ Standards and conventions for this workspace.
 
 - Keep each note in one language: French or English, not mixed
 - Use accents in French
+- Use spaces only; indent with two spaces and never tabs
 - Keep list items readable: concise but complete
 - No H1 headers (`#`); start with H2 (`##`) or content; filename serves as the title
 - Blank line before bullet lists
 - Use markup (bold, italic, etc) only when needed for emphasis or clarity
 - Avoid special characters: emojis, arrows, em-dashes
-- No space before double punctuation (`;`, `?`, `!`), including in French, to prevent unintended line breaks
+- No space before punctuation (`:`, `;`, `?`, `!`), including in French
 - No comma before `and` or `or`
 - Join clauses with semicolons, colons or parentheses instead of dashes
 - No placeholder sections for future content
 
 ## Filenames
 
-- Use natural, readable names in the note language
+- Use short, natural and readable names in the note language
+- Do not use accents in file or directory names
 - Name actions with an infinitive verb followed by a concrete object or expected result
 - Do not put dates, statuses or tags in filenames; use frontmatter instead
 
@@ -24,15 +26,17 @@ Examples: `Reply to the insurance company.md`, `Book the vehicle inspection.md`
 
 ## Frontmatter
 
-Every note starts with YAML frontmatter:
+Frontmatter keeps notes findable and trackable across the vault. Every note starts with YAML frontmatter:
 
 - `status`: new, active, shelved, next, waiting, done
 - `created`: YYYY-MM-DD
 - `modified`: YYYY-MM-DD
+- `description`: optional short summary
 - `tags`: `action` or `reference`
 - `topics`: array of free-form tags for searchability
+- `recipient`: optional array of people benefiting from the note or action
 
-Frontmatter keeps notes findable and trackable across the vault.
+Keep shared frontmatter fields in this order: `status`, `created`, `modified`, `description`, `tags`, `topics`, `recipient`.
 
 ### Status
 
@@ -45,13 +49,14 @@ Frontmatter keeps notes findable and trackable across the vault.
 
 ## Actions
 
-Actions use the TaskNotes plugin, which adds:
+Action frontmatter inserts `scheduled` and optional `due` after `modified`, continues with `description`, then places other action fields before `tags`. Actions use the TaskNotes plugin, which adds:
 
-- `priority`: low, normal, high, top
+- `priority`: integer from 1 to 4; 1 low, 2 normal, 3 high, 4 top
 - `scheduled`: YYYY-MM-DD; date when the action should be performed, not the capture date
+- `due`: YYYY-MM-DD; hard deadline after which the action is overdue
 - `projects`: array of wikilinks to related projects
 
-Pick a realistic date when the action is created based on urgency, effort, deadlines and dependencies. Use today for a short or urgent action, the next working day for a normal action, and a later date when there is a known deadline, dependency or follow-up delay.
+Set `scheduled` to the next date on which the action should be performed. Set `due` only when a real deadline exists; keep it distinct from `scheduled`. Use today for a short or urgent action, the next working day for a normal action, and a later date when there is a known dependency or follow-up delay.
 
 ## References
 
@@ -60,5 +65,5 @@ Pick a realistic date when the action is created based on urgency, effort, deadl
 
 ## Commit Messages
 
-- Use a concise English Conventional Commit based on the actual diff; name the concrete change
-- Example: `feat: add capture workflow and scheduling conventions`
+- Inspect the repository status and relevant diff before suggesting a message; describe only the concrete changes concerned
+- Use a concise English Conventional Commit

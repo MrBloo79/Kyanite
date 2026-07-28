@@ -28,7 +28,7 @@ Files load in this order:
 
 Actions are stored in `Actions` and managed with TaskNotes; their fields are defined in CONVENTIONS.md.
 
-Kyanite uses `scheduled` for the next date on which an action should be performed. It does not use a separate `due` field; hard deadlines remain in the action content.
+Actions use `scheduled` for their next execution date and may use `due` for a hard deadline; both are defined in CONVENTIONS.md.
 
 ## Capture Flow
 
