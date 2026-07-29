@@ -2,18 +2,16 @@ Standards and conventions for this workspace.
 
 ## Writing & Style
 
-- Keep each note in one language: French or English, not mixed
-- Use accents in French
-- Use spaces only; indent with two spaces and never tabs
-- Keep list items readable: concise but complete
-- Omit final periods from short list items; use them in paragraphs and multi-sentence items
+- Keep each note monolingual; use French accents in French and straight double quotation marks (`"`) in all languages
+- Use spaces only; indent with two spaces, never tabs
+- Keep list items concise and complete; omit final periods from short items
+- Use periods in paragraphs and multi-sentence list items
 - No H1 headers (`#`); start with H2 (`##`) or content; filename serves as the title
 - Blank line before bullet lists
 - Format Markdown tables with aligned, space-padded columns
 - Use markup (bold, italic, etc) only when needed for emphasis or clarity
-- Avoid special characters: emojis, arrows, em-dashes
-- No space before punctuation (`:`, `;`, `?`, `!`), including in French
-- After `:`, use lowercase by default; use uppercase only for proper nouns or full standalone sentences
+- Avoid special characters such as emojis, arrows and em-dashes
+- No space before punctuation (`:`, `;`, `?`, `!`); use lowercase after `:` by default
 - No comma before `and` or `or`
 - Join clauses with semicolons, colons or parentheses instead of dashes
 - No placeholder sections for future content
@@ -31,15 +29,18 @@ Examples: `Reply to the insurance company.md`, `Book the vehicle inspection.md`
 
 Frontmatter keeps notes findable and trackable across the vault. Every note starts with YAML frontmatter:
 
+- Use unquoted values for simple YAML scalars and block-style arrays
+- Use straight double quotes only when needed to avoid YAML ambiguity or preserve a value exactly
 - `status`: new, active, shelved, next, waiting, done
 - `created`: YYYY-MM-DD
 - `modified`: YYYY-MM-DD
 - `description`: optional short summary
+- `source`: optional origin such as `self`, a URL, `mail`, `meeting` or `chat`; preserve the original source when AI only reformulates the note
 - `tags`: `action` or `reference`; this field identifies the note type
 - `topics`: array of free-form keywords for searchability, including a relevant responsibility domain when the note belongs to one
 - `recipient`: optional array of people benefiting from the note or action
 
-Keep shared frontmatter fields in this order: `status`, `created`, `modified`, `description`, `tags`, `topics`, `recipient`.
+Keep shared frontmatter fields in this order: `status`, `created`, `modified`, `description`, `source`, `tags`, `topics`, `recipient`.
 
 Organizational context is not a responsibility domain.
 
