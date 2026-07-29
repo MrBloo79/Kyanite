@@ -12,6 +12,7 @@ Standards and conventions for this workspace.
 - Use markup (bold, italic, etc) only when needed for emphasis or clarity
 - Avoid special characters: emojis, arrows, em-dashes
 - No space before punctuation (`:`, `;`, `?`, `!`), including in French
+- After `:`, use lowercase by default; use uppercase only for proper nouns or full standalone sentences
 - No comma before `and` or `or`
 - Join clauses with semicolons, colons or parentheses instead of dashes
 - No placeholder sections for future content
@@ -70,3 +71,4 @@ Set `scheduled` to the next date on which the action should be performed. Set `d
 
 - Inspect the repository status and relevant diff before suggesting a message; describe only the concrete changes concerned
 - Use a concise English Conventional Commit
+- Do not use scoped prefixes such as `(kyanite)`; prefer `type: summary`

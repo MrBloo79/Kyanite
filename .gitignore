@@ -11,4 +11,5 @@
 !.kyanite/
 !.kyanite/*
 .kyanite/MEMORY.md
+!.instructions.md
 !.gitignore

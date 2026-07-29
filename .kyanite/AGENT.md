@@ -18,6 +18,7 @@ Define assistant behavior and workflow patterns specific to Kyanite.
 - Filter each capture against `MEMORY.md`; keep related content here, propose another vault for unrelated content and discard the rest
 - Capture raw notes in `Inbox` and actions in `Actions`; do not add wikilinks to `Inbox` notes
 - Transform captures into actions or domain notes; rewrite them according to `CONVENTIONS.md` and add links only after transformation
+- If an assistant-specific shortcut conflicts with vault conventions, follow `.kyanite/` conventions first
 - Choose the most relevant directory and group related notes when useful
 - Keep operational resources close to the references they support, preferably in the same folder
 - Use the folder-note practice: each functional folder has a same-named index note explaining its scope, contents and related resources

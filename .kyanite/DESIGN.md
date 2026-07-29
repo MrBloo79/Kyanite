@@ -14,29 +14,58 @@ Kyanite follows these principles:
 
 Files load in this order:
 
-1. MEMORY.md: User context, needs and preferences
-2. DESIGN.md: Architecture, principles and compliance rules
-3. AGENT.md: Behavior, decisions and error handling
-4. CONVENTIONS.md: Writing, file, commit and formatting standards
+1. MEMORY.md: user context, needs and preferences
+2. DESIGN.md: architecture, principles and compliance rules
+3. AGENT.md: behavior, decisions and error handling
+4. CONVENTIONS.md: writing, file, commit and formatting standards
 
 ## Folders
 
-- `Inbox`: Unprocessed notes and files
-- `Actions`: Actions captured directly or identified from `Inbox`
+- `Inbox`: unprocessed notes and files
+- `Actions`: actions captured directly or identified from `Inbox`
 
 ## Actions
 
-Actions are stored in `Actions` and managed with TaskNotes; their fields are defined in CONVENTIONS.md.
+Actions are stored in `Actions` and follow TaskNotes semantics:
 
-Actions use `scheduled` for their next execution date and may use `due` for a hard deadline; both are defined in CONVENTIONS.md.
+- `scheduled` is the next execution date
+- `due` is a hard deadline
+
+Actions past `due` are overdue and should be rescheduled or closed.
 
 ## Capture Flow
 
 Raw emails, conversations and drafts enter through `Inbox` or chat; the assistant turns them into actions or references.
 
-## Ameliorations
+Each note stays monolingual (French or English).
 
-- Enable cross-assistant compatibility with assistant-specific overrides
+## Assistant Integrations
+
+Kyanite is assistant-agnostic. Assistant-specific integrations are optional and cannot override vault rules.
+
+### GitHub Copilot
+
+- Copilot auto-loads `.instructions.md`, which proxies `.kyanite/` rules
+- Copilot memory lives outside the workspace under `/memories/` and maps to VS Code user data storage (User/globalStorage/github.copilot-chat)
+- `/memories/repo/` is workspace-scoped; `/memories/session/` is session-scoped
+- Copilot memory complements vault notes; it does not replace `.kyanite/` files
+
+When a rule should stay visible and versioned for the vault, keep it in `.kyanite/` files and optionally mirror a concise reminder in assistant-specific memory.
+
+## Design Choices
+
+This section records implementation choices for `.kyanite/`; it documents the design and does not redefine it.
+
+Update this file whenever user-requested evolutions change principles, boundaries, or operating rules.
+
+### Action Tracking Model
+
+- Decision: use Obsidian TaskNotes for action tracking
+- Rationale: properties-based metadata is more robust than inline task markup; standard Obsidian Bases views improve discoverability and maintenance
+- Rejected: Obsidian Tasks plugin (less aligned with a properties-first model)
+
+## Improvements
+
 - Consider automated workflows through skills folder
 - Consider a stricter caveman response mode for contexts requiring extreme brevity
 
