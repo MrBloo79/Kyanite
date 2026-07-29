@@ -1,3 +1,20 @@
 {
-  "security.workspace.trust.enabled": false
+  "security.workspace.trust.enabled": false,
+  "github.codespaces.devcontainerAutomatic": false,
+  "git.autofetch": true,
+  "git.autofetchPeriod": 3600,
+  "files.autoSave": "afterDelay",
+  "files.defaultLanguage": "markdown",
+  "editor.detectIndentation": false,
+  "editor.stickyScroll.enabled": false,
+  "editor.minimap.enabled": false,
+  "editor.lineNumbers": "off",
+  "breadcrumbs.enabled": false,
+  "markdown.preview.breaks": true,
+  "markdown.extension.italic.indicator": "_",
+  "explorer.confirmDelete": false,
+  "explorer.compactFolders": false,
+  "workbench.startupEditor": "none",
+  "workbench.activityBar.location": "top",
+  "window.zoomLevel": 0.2
 }

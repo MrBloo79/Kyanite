@@ -1,5 +1,7 @@
 {
   "recommendations": [
-    "mechatroner.rainbow-csv"
+    "mechatroner.rainbow-csv",
+    "takumii.markdowntable",
+    "yzhang.markdown-all-in-one"
   ]
 }

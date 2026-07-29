@@ -9,6 +9,7 @@ Standards and conventions for this workspace.
 - Omit final periods from short list items; use them in paragraphs and multi-sentence items
 - No H1 headers (`#`); start with H2 (`##`) or content; filename serves as the title
 - Blank line before bullet lists
+- Format Markdown tables with aligned, space-padded columns
 - Use markup (bold, italic, etc) only when needed for emphasis or clarity
 - Avoid special characters: emojis, arrows, em-dashes
 - No space before punctuation (`:`, `;`, `?`, `!`), including in French
