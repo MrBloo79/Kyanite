@@ -10,6 +10,7 @@ Standards and conventions for this workspace.
 - Blank line before bullet lists
 - Format Markdown tables with aligned, space-padded columns
 - Use markup (bold, italic, etc) only when needed for emphasis or clarity
+- Do not add artificial or redundant body content when the description is sufficient
 - Avoid special characters such as emojis, arrows and em-dashes
 - No space before punctuation (`:`, `;`, `?`, `!`); use lowercase after `:` by default
 - No comma before `and` or `or`
@@ -27,7 +28,10 @@ Examples: `Reply to the insurance company.md`, `Book the vehicle inspection.md`
 
 ## Frontmatter
 
-Frontmatter keeps notes findable and trackable across the vault. Every note starts with YAML frontmatter:
+Frontmatter keeps maintained notes findable and trackable across the vault. Every transformed note starts with YAML frontmatter:
+
+- Raw captures may temporarily omit frontmatter while they remain unprocessed in `Inbox`
+- Add the required frontmatter when transforming a raw capture into an action or reference
 
 - Use unquoted values for simple YAML scalars and block-style arrays
 - Use straight double quotes only when needed to avoid YAML ambiguity or preserve a value exactly
@@ -37,12 +41,10 @@ Frontmatter keeps notes findable and trackable across the vault. Every note star
 - `description`: optional short summary
 - `source`: optional origin such as `self`, a URL, `mail`, `meeting` or `chat`; preserve the original source when AI only reformulates the note
 - `tags`: `action` or `reference`; this field identifies the note type
-- `topics`: array of free-form keywords for searchability, including a relevant responsibility domain when the note belongs to one
+- `topics`: array of free-form keywords for searchability; include a responsibility domain when relevant, plus as many additional keywords as needed for context, activity and other retrieval needs
 - `recipient`: optional array of people benefiting from the note or action
 
 Keep shared frontmatter fields in this order: `status`, `created`, `modified`, `description`, `source`, `tags`, `topics`, `recipient`.
-
-Organizational context is not a responsibility domain.
 
 ### Status
 

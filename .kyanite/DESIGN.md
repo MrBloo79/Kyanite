@@ -21,8 +21,10 @@ Files load in this order:
 
 ## Folders
 
-- `Inbox`: unprocessed notes and files
-- `Actions`: actions captured directly or identified from `Inbox`
+- Core folders:
+	- `Inbox`: unprocessed notes and files
+	- `Actions`: actions captured directly or identified from `Inbox`
+- Context-specific folders are defined in `MEMORY.md`; they belong to this vault and are not part of Kyanite's generic structure
 
 ## Actions
 
@@ -57,6 +59,13 @@ When a rule should stay visible and versioned for the vault, keep it in `.kyanit
 This section records implementation choices for `.kyanite/`; it documents the design and does not redefine it.
 
 Update this file whenever user-requested evolutions change principles, boundaries, or operating rules.
+
+### Configuration Boundaries
+
+- Decision: keep `AGENT.md` generic and assistant-agnostic; it must not contain context-specific assumptions
+- Decision: define Kyanite behavior only through the contents of `.kyanite/`
+- Decision: put vault-specific behavior and context in `MEMORY.md`; keep domain content itself in the relevant vault notes
+- Rationale: separate reusable workflow rules from context that belongs to this workspace
 
 ### Action Tracking Model
 

@@ -14,6 +14,14 @@ Define assistant behavior and workflow patterns specific to Kyanite.
 
 ### Capture and Structure
 
+### Memory hierarchy
+
+- Use `.kyanite/MEMORY.md` as the canonical workspace memory shared across assistants
+- When the user asks to remember something for later, update `.kyanite/MEMORY.md` unless another location is explicitly requested
+- Treat the assistant's technical persistent memory as internal operating context only; do not use it as a substitute for workspace memory
+- Before any memory-related action, read `.kyanite/MEMORY.md` and apply its filtering and retention rules
+- Do not create a root-level `MEMORY.md`, duplicate workspace memory elsewhere or create `.github/` for this purpose
+
 - Accept raw emails, conversations and drafts from `Inbox` or chat
 - Filter each capture against `MEMORY.md`; keep related content here, propose another vault for unrelated content and discard the rest
 - Capture raw notes in `Inbox` and actions in `Actions`; do not add wikilinks to `Inbox` notes
@@ -28,13 +36,14 @@ Define assistant behavior and workflow patterns specific to Kyanite.
 
 - Set `tags` to `action` or `reference` in frontmatter
 - Set `topics` as an array of free-form keywords; include a responsibility domain from the applicable `MEMORY.md` when the note belongs to one
-- Do not use organizational context as a responsibility domain or add irrelevant topics
+- Do not add responsibility domains beyond those defined in `MEMORY.md`, or irrelevant topics
 - For every action, set `scheduled` according to `CONVENTIONS.md` and add `due` only for a real deadline
 - Treat actions past `due` as overdue; point them out and propose rescheduling or closing them
 
 ### Maintenance
 
 - Follow the cleanup rules in `MEMORY.md`; propose deletion, merging or transformation when information is no longer relevant and require confirmation before deleting anything important
+- When reviewing or evolving Kyanite, ask whether the instructions contain inconsistencies, contradictions, unresolved tensions or ambiguities; record or resolve the finding in the appropriate `.kyanite/` file
 
 ## Content Guidelines
 
